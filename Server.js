@@ -1,24 +1,4 @@
 const express = require('express');
 const app = express();
-app.use(express.json());
-
-app.get('/', (req, res) => {
-  res.json({
-    message: 'MarPay Nigeria - NIN Only',
-    owner: 'Umar Hadi Gwani',
-    opay: '7012869066',
-    bank: 'OPay',
-    status: 'Live - An hade waje daya!'
-  });
-});
-
-app.get('/api/owner', (req, res) => {
-  res.json({
-    fullName: 'Umar Hadi Gwani',
-    opayAccount: '7012869066',
-    bank: 'OPay'
-  });
-});
-
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => console.log('MarPay Live - OPay 7012869066'));
+app.get('/', (req,res)=>{res.json({message:'MarPay Live!', owner:'Umar Hadi Gwani', opay:'7012869066'})});
+app.listen(process.env.PORT||5000, ()=>console.log('Live'));
